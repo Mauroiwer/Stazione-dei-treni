@@ -4,15 +4,17 @@ public class Treno {
     private String nome;
     private Motore motore;
     private int velocitàmassima;
+    private String destinazione;
 
 
     
     //metodo costruttore
-    public Treno(String nome,int velocitàmassima,Motore motore){
+    public Treno(String nome,int velocitàmassima,Motore motore, String destinazione){
 
         this.nome=nome;
         this.velocitàmassima=velocitàmassima;
         this.motore=motore;
+        this.destinazione=destinazione;
 
         
     }
@@ -21,6 +23,7 @@ public class Treno {
         this.nome="";
         this.velocitàmassima=0;
         this.motore=null;
+        this.destinazione="";
 
     }
     
@@ -28,6 +31,7 @@ public class Treno {
         this.nome=that.nome;
         this.velocitàmassima=that.velocitàmassima;
         this.motore=that.motore;
+        this.destinazione=that.destinazione;
 
     }
     
@@ -41,6 +45,9 @@ public class Treno {
     }
     public Motore getMotore(){
         return this.motore;
+    }
+    public String getDestinazione(){
+        return this.destinazione;
     }
 
 
@@ -56,16 +63,21 @@ public class Treno {
     public void setMotore(Motore motore){
         this.motore=motore;
     }
+    public void setDestinazione(String destinazione){
+        this.destinazione=destinazione;
+    }
     
+
+
         
         public String toString(){
-        return " tipo di treno "+this.nome+" velocità massima k/h "+this.velocitàmassima+" motore "+this.motore;
+        return " tipo di treno "+this.nome+" velocità massima k/h "+this.velocitàmassima+" motore "+this.motore+" destinazione "+this.destinazione;
     }
     
     
     public boolean equals(Treno that){
        boolean r=false;
-       if(this.nome==that.nome && this.velocitàmassima==that.velocitàmassima && this.motore==that.motore){
+       if(this.nome==that.nome && this.velocitàmassima==that.velocitàmassima && this.motore==that.motore && this.destinazione==that.destinazione){
            r=true;
        }
        return r;
